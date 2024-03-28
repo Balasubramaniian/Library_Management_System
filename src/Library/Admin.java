@@ -12,6 +12,7 @@ public class Admin {
 		if(adminsList.size()==0) {
 				adminsList.add(new Admin(adminId,Adminname));
 		}
+		
 	}
 	Admin(int adminId,String Adminname){
 		this.adminId=adminId;
@@ -25,7 +26,7 @@ public class Admin {
 			return false;
 		}
 	}
-	private void createAdmins(int n) {
+	public void createAdmins(int n) {
 		for(int i=0;i<n;i++) {
 		Scanner sc=new Scanner(System.in);
 		adminId=id++;
@@ -35,4 +36,5 @@ public class Admin {
 		adminsList.add(new Admin(adminId,adminname));
 		}
 	}
+	
 }

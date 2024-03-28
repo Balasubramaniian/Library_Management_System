@@ -26,7 +26,7 @@ public class LibraryManagementSystem {
                         System.out.println("----------------------------------------");
                         boolean ans1=true;
                         while(ans1) {
-                        	System.out.println("1-Add User 2-Add Books 3-Available Books 4-VerifiedUsers 5-Remove User");
+                        	System.out.println("1-Add User 2-Add Books 3-Available Books 4-VerifiedUsers 5-Remove User 6-Main Menu");
                             int adminChoice = sc.nextInt();
                             switch (adminChoice) {
                                 case 1:
@@ -38,9 +38,9 @@ public class LibraryManagementSystem {
                                 case 2:
                                 	System.out.println("------------------Add Books------------------");
                     				System.out.println("Enter the BookName: ");
-                    				String BookName=sc.next();
+                    				String BookName=sc.next().toLowerCase();
                     				System.out.println("Enter the BookGenre: ");
-                    				String Genre=sc.next();
+                    				String Genre=sc.next().toLowerCase();
                     				library.addBooks(BookName,Genre);
                     				break;
                                 case 3:
@@ -54,6 +54,13 @@ public class LibraryManagementSystem {
                                 	int userid=sc.nextInt();
                                 	System.out.println("--------Remove User----------");
                                 	user.removeUser(userid);
+                                	break;
+                                	
+                                case 6:
+                                	ans1=false;
+                                	break;
+                                default:
+                                	break;	
                                     
                             }
                         }
@@ -65,13 +72,10 @@ public class LibraryManagementSystem {
                     }
                     break;
                 case 2:
-                    System.out.println("------------------Add Books------------------");
-                    System.out.println("Enter the Book Name: ");
-                    String bookName = sc.next();
-                    System.out.println("Enter the Book Genre: ");
-                    String genre = sc.next();
-                    library.addBooks(bookName, genre);
-                    break;
+                    System.out.println("Welcome the User page");
+                    System.out.println("Enter the Userid");
+                    int userid=sc.nextInt();
+                    user.checkUser(library,userid);
                 case 3:
                     ans = false; 
                     break;
