@@ -60,13 +60,17 @@ public class Library {
 			genrelist.add(genres);
 		}
 		booksList.add(new Library(bookid,bookname,genres));
-		
+		AvailableBooks();
 		System.out.println("Sucessfully Added Book");
+		
+	}
+	
+	public void AvailableBooks() {
 		System.out.println("--------------Book Details-------------");
 		for(Library l:booksList) {
 			System.out.println(l);
 		}
-		System.out.println("----------------------------------------");
+		System.out.println("----------------------------------------\n");
 	}
 	@Override
 	public String toString() {

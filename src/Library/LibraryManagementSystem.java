@@ -43,6 +43,9 @@ public class LibraryManagementSystem {
                     				String Genre=sc.next();
                     				library.addBooks(BookName,Genre);
                     				break;
+                                case 3:
+                                	library.AvailableBooks();
+                                	break;
                                     
                             }
                         }
