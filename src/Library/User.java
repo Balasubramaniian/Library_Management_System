@@ -34,12 +34,28 @@ public class User {
 		userid=id++;
 		userList.add(new User(userid,name));
 		System.out.println("Successfully Created\n");
-		System.out.println("---------------User Details-------------\n");
+	}
+	public void verifiedUsers() {
+		System.out.println("---------------User Details-------------");
 		for(User u:userList) {
-			System.out.println(u);
+			System.out.println(u+"\n");
 		}
-		System.out.println("----------------------------------------\n");
-		
+		System.out.println("----------------------------------------");
+	}
+
+	public void removeUser(int userid) {
+	    boolean removed = false; 
+	    for (int i = 0; i < userList.size(); i++) {
+	        if (userList.get(i).userid == userid) {
+	            userList.remove(i);
+	            removed = true;
+	            System.out.println("------------------------Removed Successfully--------------------");
+	            break; 
+	        }
+	    }
+	    if (!removed) {
+	        System.out.println("User with ID " + userid + " not found");
+	    }
 	}
 
 	

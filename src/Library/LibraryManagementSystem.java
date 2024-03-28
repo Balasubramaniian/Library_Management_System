@@ -16,17 +16,17 @@ public class LibraryManagementSystem {
 
             switch (choice) {
                 case 1:
-                    System.out.println("--------------Admin Login---------------\n");
+                    System.out.println("--------------Admin Login---------------");
                     System.out.println("Enter the Adminname: ");
                     String name = sc.next();
                     System.out.println("Enter the AdminId: ");
                     int id = sc.nextInt();
                     if (admin.checkAdmin(name, id)) {
                         System.out.println("Successfully Login");
-                        System.out.println("----------------------------------------\n");
+                        System.out.println("----------------------------------------");
                         boolean ans1=true;
                         while(ans1) {
-                        	System.out.println("1-Add User 2-Add Books 3-Available Books 4-Remove User");
+                        	System.out.println("1-Add User 2-Add Books 3-Available Books 4-VerifiedUsers 5-Remove User");
                             int adminChoice = sc.nextInt();
                             switch (adminChoice) {
                                 case 1:
@@ -46,6 +46,14 @@ public class LibraryManagementSystem {
                                 case 3:
                                 	library.AvailableBooks();
                                 	break;
+                                case 4:
+                                	user.verifiedUsers();
+                                	break;
+                                case 5:
+                                	System.out.println("Enter the UserId for Remove User");
+                                	int userid=sc.nextInt();
+                                	System.out.println("--------Remove User----------");
+                                	user.removeUser(userid);
                                     
                             }
                         }
